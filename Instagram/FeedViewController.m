@@ -16,7 +16,12 @@
 
 @implementation FeedViewController
 
-- (void)onTimer {
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+    [self makeQuery];
+    [refreshControl endRefreshing];
+}
+
+- (void)makeQuery {
     //[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey:@"author"];
@@ -46,12 +51,20 @@
         // PFUser.current() will now be nil
     }];
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"View did appear");
+    [self makeQuery];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-    [self onTimer];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
+    [self makeQuery];
     // Do any additional setup after loading the view.
 }
 
