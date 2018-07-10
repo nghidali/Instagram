@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.h">
-   </FileRef>
-   <FileRef
-      location = "group:/Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.m">
-   </FileRef>
-   <FileRef
       location = "group:Instagram.xcodeproj">
    </FileRef>
    <FileRef

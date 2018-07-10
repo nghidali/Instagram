@@ -17,11 +17,11 @@
 @implementation FeedViewController
 
 - (void)onTimer {
-    [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
-    // construct query
-    PFQuery *query = [PFQuery queryWithClassName:@"InstagramPost"];
-    [query includeKey:@"user"];
+    //[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(onTimer) userInfo:nil repeats:true];
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey:@"author"];
     [query includeKey:@"caption"];
+    [query includeKey:@"image"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     
@@ -30,19 +30,21 @@
         if (posts != nil) {
             self.posts = posts;
             NSLog(@"posts retrieved!");
+            [self.tableView reloadData];
             // do something with the array of object returned by the call
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
     }];
-    [self.tableView reloadData];
+    
 }
 
 - (IBAction)onLogout:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil]; //change to trigger a segue to the login controller
+    NSLog(@"User is logged out");
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         // PFUser.current() will now be nil
     }];
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -71,7 +73,17 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     cell.postCaption.text = self.posts[indexPath.row][@"caption"];
-    PFUser *user = self.posts[indexPath.row][@"user"];
+    PFUser *user = self.posts[indexPath.row][@"author"];
+    
+    PFFile * imageFile = self.posts[indexPath.row][@"image"];
+    if(imageFile != nil){
+        [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
+            if (!imageData) {
+                return NSLog(@"%@", error);
+            }
+            cell.postImage.image = [UIImage imageWithData:imageData];
+        }];
+    }
     if (user != nil) {
         // User found! update username label with username
         cell.usernameLabel.text = user.username;
@@ -79,6 +91,7 @@
         // No user found, set default username
         cell.usernameLabel.text = @"🤖";
     }
+    
     return cell;
     
 }

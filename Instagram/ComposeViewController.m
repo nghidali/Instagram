@@ -8,10 +8,12 @@
 
 #import "ComposeViewController.h"
 #import "Parse.h"
+#import "Post.h"
 
-@interface ComposeViewController ()
+@interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *captionField;
-
+@property (weak, nonatomic) IBOutlet UIButton *chooseImageButton;
+@property UIImage * imageUpload;
 @end
 
 @implementation ComposeViewController
@@ -24,15 +26,36 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)onChooseImage:(id)sender {
+    //Instantiate a UIImagePickerController
+    NSLog(@"Image picker selected!");
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
     
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 - (IBAction)onShare:(id)sender {
-    PFObject *instagramPost = [PFObject objectWithClassName:@"InstagramPost"];
+    /*PFObject *instagramPost = [PFObject objectWithClassName:@"InstagramPost"];
     instagramPost[@"caption"] = self.captionField.text;
     instagramPost[@"user"] = [PFUser currentUser];
     [instagramPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (succeeded) {
             NSLog(@"The message was saved!");
+            self.captionField.text = nil;
+        } else {
+            NSLog(@"Problem saving message: %@", error.localizedDescription);
+        }
+    }];*/
+    [Post postUserImage:self.imageUpload withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"The post was saved!");
             self.captionField.text = nil;
         } else {
             NSLog(@"Problem saving message: %@", error.localizedDescription);
@@ -44,6 +67,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    originalImage = [self resizeImage:originalImage withSize:CGSizeMake(100, 100)];
+    self.imageUpload = originalImage;
+    // Do something with the images (based on your use case)
+    NSLog(@"Image taken!");
+    [self.chooseImageButton setImage:originalImage forState:UIControlStateNormal];
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 /*

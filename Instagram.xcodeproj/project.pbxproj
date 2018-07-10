@@ -16,6 +16,8 @@
 		671A0B6E20F4095300540AA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A0B6D20F4095300540AA8 /* main.m */; };
 		671A0B7820F4095300540AA8 /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A0B7720F4095300540AA8 /* InstagramTests.m */; };
 		671A0B8320F4095300540AA8 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A0B8220F4095300540AA8 /* InstagramUITests.m */; };
+		673545D520F5464800FBF4D3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545D420F5464800FBF4D3 /* Post.m */; };
+		673545D720F55DA600FBF4D3 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 673545D620F55DA600FBF4D3 /* Billabong.ttf */; };
 		6797824920F4207F00BC4950 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824820F4207F00BC4950 /* LoginViewController.m */; };
 		6797824C20F4258500BC4950 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824B20F4258500BC4950 /* FeedViewController.m */; };
 		6797824F20F4282F00BC4950 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824E20F4282F00BC4950 /* PostCell.m */; };
@@ -61,6 +63,9 @@
 		671A0B7E20F4095300540AA8 /* InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		671A0B8220F4095300540AA8 /* InstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITests.m; sourceTree = "<group>"; };
 		671A0B8420F4095300540AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		673545D320F5464800FBF4D3 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		673545D420F5464800FBF4D3 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		673545D620F55DA600FBF4D3 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
 		6797824720F4207F00BC4950 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.h; sourceTree = "<absolute>"; };
 		6797824820F4207F00BC4950 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.m; sourceTree = "<absolute>"; };
 		6797824A20F4258500BC4950 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -137,6 +142,8 @@
 		671A0B5D20F4095200540AA8 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				673545D320F5464800FBF4D3 /* Post.h */,
+				673545D420F5464800FBF4D3 /* Post.m */,
 				671A0B6420F4095200540AA8 /* Main.storyboard */,
 				6797824A20F4258500BC4950 /* FeedViewController.h */,
 				6797824B20F4258500BC4950 /* FeedViewController.m */,
@@ -151,6 +158,7 @@
 				671A0B6720F4095300540AA8 /* Assets.xcassets */,
 				671A0B6920F4095300540AA8 /* LaunchScreen.storyboard */,
 				671A0B6C20F4095300540AA8 /* Info.plist */,
+				673545D620F55DA600FBF4D3 /* Billabong.ttf */,
 				671A0B6D20F4095300540AA8 /* main.m */,
 			);
 			path = Instagram;
@@ -297,6 +305,7 @@
 				671A0B6B20F4095300540AA8 /* LaunchScreen.storyboard in Resources */,
 				671A0B6820F4095300540AA8 /* Assets.xcassets in Resources */,
 				671A0B6620F4095200540AA8 /* Main.storyboard in Resources */,
+				673545D720F55DA600FBF4D3 /* Billabong.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +411,7 @@
 				6797825220F4323B00BC4950 /* ComposeViewController.m in Sources */,
 				6797824920F4207F00BC4950 /* LoginViewController.m in Sources */,
 				6797824F20F4282F00BC4950 /* PostCell.m in Sources */,
+				673545D520F5464800FBF4D3 /* Post.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -572,7 +582,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH2ZJ74M2A;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -590,7 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = HH2ZJ74M2A;
 				INFOPLIST_FILE = Instagram/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
