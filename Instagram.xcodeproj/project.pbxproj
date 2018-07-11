@@ -27,6 +27,8 @@
 		673545ED20F5CC5B00FBF4D3 /* more-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545EC20F5CC5A00FBF4D3 /* more-icon.png */; };
 		673545EF20F5CD3700FBF4D3 /* paper-airplane-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545EE20F5CD3600FBF4D3 /* paper-airplane-icon.png */; };
 		673545F120F5CD8000FBF4D3 /* bookmark-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545F020F5CD8000FBF4D3 /* bookmark-icon.png */; };
+		673545F820F6AB3100FBF4D3 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545F720F6AB3100FBF4D3 /* ProfileViewController.m */; };
+		673545FB20F6AFBB00FBF4D3 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545FA20F6AFBB00FBF4D3 /* PostCollectionViewCell.m */; };
 		6797824920F4207F00BC4950 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824820F4207F00BC4950 /* LoginViewController.m */; };
 		6797824C20F4258500BC4950 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824B20F4258500BC4950 /* FeedViewController.m */; };
 		6797824F20F4282F00BC4950 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824E20F4282F00BC4950 /* PostCell.m */; };
@@ -85,6 +87,10 @@
 		673545EC20F5CC5A00FBF4D3 /* more-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-icon.png"; sourceTree = "<group>"; };
 		673545EE20F5CD3600FBF4D3 /* paper-airplane-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paper-airplane-icon.png"; path = "../../../../Downloads/paper-airplane-icon.png"; sourceTree = "<group>"; };
 		673545F020F5CD8000FBF4D3 /* bookmark-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark-icon.png"; sourceTree = "<group>"; };
+		673545F620F6AB3100FBF4D3 /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		673545F720F6AB3100FBF4D3 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		673545F920F6AFBB00FBF4D3 /* PostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
+		673545FA20F6AFBB00FBF4D3 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
 		6797824720F4207F00BC4950 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.h; sourceTree = "<absolute>"; };
 		6797824820F4207F00BC4950 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.m; sourceTree = "<absolute>"; };
 		6797824A20F4258500BC4950 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -163,6 +169,10 @@
 			children = (
 				673545E120F5C8D500FBF4D3 /* images */,
 				671A0B6420F4095200540AA8 /* Main.storyboard */,
+				673545F920F6AFBB00FBF4D3 /* PostCollectionViewCell.h */,
+				673545FA20F6AFBB00FBF4D3 /* PostCollectionViewCell.m */,
+				673545F620F6AB3100FBF4D3 /* ProfileViewController.h */,
+				673545F720F6AB3100FBF4D3 /* ProfileViewController.m */,
 				673545DC20F5863400FBF4D3 /* DetailViewController.h */,
 				673545DD20F5863400FBF4D3 /* DetailViewController.m */,
 				673545D320F5464800FBF4D3 /* Post.h */,
@@ -453,6 +463,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				671A0B6E20F4095300540AA8 /* main.m in Sources */,
+				673545F820F6AB3100FBF4D3 /* ProfileViewController.m in Sources */,
+				673545FB20F6AFBB00FBF4D3 /* PostCollectionViewCell.m in Sources */,
 				671A0B6020F4095200540AA8 /* AppDelegate.m in Sources */,
 				6797824C20F4258500BC4950 /* FeedViewController.m in Sources */,
 				673545DE20F5863400FBF4D3 /* DetailViewController.m in Sources */,
