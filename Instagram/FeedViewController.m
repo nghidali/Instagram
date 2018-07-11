@@ -9,6 +9,7 @@
 #import "FeedViewController.h"
 #import "Parse.h"
 #import "PostCell.h"
+#import "DetailViewController.h"
 @interface FeedViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray * posts;
@@ -27,6 +28,7 @@
     [query includeKey:@"author"];
     [query includeKey:@"caption"];
     [query includeKey:@"image"];
+    [query includeKey:@"createdAt"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     
@@ -73,21 +75,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     cell.postCaption.text = self.posts[indexPath.row][@"caption"];
     PFUser *user = self.posts[indexPath.row][@"author"];
-    
+    cell.timestamp = self.posts[indexPath.row][@"timestamp"];
     PFFile * imageFile = self.posts[indexPath.row][@"image"];
     if(imageFile != nil){
         [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
@@ -112,5 +104,17 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.posts.count;
 }
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"DetailSegue"]){
+        PostCell * postCell = (PostCell *) sender;
+        DetailViewController * detailViewController = [segue destinationViewController];
+        detailViewController.postCell = postCell;
+    }
+}
+
 
 @end

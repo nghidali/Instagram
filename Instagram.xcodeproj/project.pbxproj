@@ -18,6 +18,15 @@
 		671A0B8320F4095300540AA8 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A0B8220F4095300540AA8 /* InstagramUITests.m */; };
 		673545D520F5464800FBF4D3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545D420F5464800FBF4D3 /* Post.m */; };
 		673545D720F55DA600FBF4D3 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 673545D620F55DA600FBF4D3 /* Billabong.ttf */; };
+		673545D920F56A7200FBF4D3 /* background-instagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 673545D820F56A7200FBF4D3 /* background-instagram.jpg */; };
+		673545DB20F5707600FBF4D3 /* Screen Shot 2018-07-10 at 3.53.01 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545DA20F5707600FBF4D3 /* Screen Shot 2018-07-10 at 3.53.01 PM.png */; };
+		673545DE20F5863400FBF4D3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545DD20F5863400FBF4D3 /* DetailViewController.m */; };
+		673545E020F5C58300FBF4D3 /* heart-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545DF20F5C58300FBF4D3 /* heart-icon.png */; };
+		673545E320F5C9BC00FBF4D3 /* comments-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545E220F5C9BC00FBF4D3 /* comments-icon.png */; };
+		673545E920F5CB7100FBF4D3 /* kitten.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545E820F5CB7100FBF4D3 /* kitten.png */; };
+		673545ED20F5CC5B00FBF4D3 /* more-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545EC20F5CC5A00FBF4D3 /* more-icon.png */; };
+		673545EF20F5CD3700FBF4D3 /* paper-airplane-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545EE20F5CD3600FBF4D3 /* paper-airplane-icon.png */; };
+		673545F120F5CD8000FBF4D3 /* bookmark-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545F020F5CD8000FBF4D3 /* bookmark-icon.png */; };
 		6797824920F4207F00BC4950 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824820F4207F00BC4950 /* LoginViewController.m */; };
 		6797824C20F4258500BC4950 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824B20F4258500BC4950 /* FeedViewController.m */; };
 		6797824F20F4282F00BC4950 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824E20F4282F00BC4950 /* PostCell.m */; };
@@ -66,6 +75,16 @@
 		673545D320F5464800FBF4D3 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		673545D420F5464800FBF4D3 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		673545D620F55DA600FBF4D3 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
+		673545D820F56A7200FBF4D3 /* background-instagram.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-instagram.jpg"; sourceTree = "<group>"; };
+		673545DA20F5707600FBF4D3 /* Screen Shot 2018-07-10 at 3.53.01 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2018-07-10 at 3.53.01 PM.png"; sourceTree = "<group>"; };
+		673545DC20F5863400FBF4D3 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		673545DD20F5863400FBF4D3 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		673545DF20F5C58300FBF4D3 /* heart-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "heart-icon.png"; sourceTree = "<group>"; };
+		673545E220F5C9BC00FBF4D3 /* comments-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "comments-icon.png"; sourceTree = "<group>"; };
+		673545E820F5CB7100FBF4D3 /* kitten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kitten.png; sourceTree = "<group>"; };
+		673545EC20F5CC5A00FBF4D3 /* more-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more-icon.png"; sourceTree = "<group>"; };
+		673545EE20F5CD3600FBF4D3 /* paper-airplane-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "paper-airplane-icon.png"; path = "../../../../Downloads/paper-airplane-icon.png"; sourceTree = "<group>"; };
+		673545F020F5CD8000FBF4D3 /* bookmark-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bookmark-icon.png"; sourceTree = "<group>"; };
 		6797824720F4207F00BC4950 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.h; sourceTree = "<absolute>"; };
 		6797824820F4207F00BC4950 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.m; sourceTree = "<absolute>"; };
 		6797824A20F4258500BC4950 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -142,9 +161,12 @@
 		671A0B5D20F4095200540AA8 /* Instagram */ = {
 			isa = PBXGroup;
 			children = (
+				673545E120F5C8D500FBF4D3 /* images */,
+				671A0B6420F4095200540AA8 /* Main.storyboard */,
+				673545DC20F5863400FBF4D3 /* DetailViewController.h */,
+				673545DD20F5863400FBF4D3 /* DetailViewController.m */,
 				673545D320F5464800FBF4D3 /* Post.h */,
 				673545D420F5464800FBF4D3 /* Post.m */,
-				671A0B6420F4095200540AA8 /* Main.storyboard */,
 				6797824A20F4258500BC4950 /* FeedViewController.h */,
 				6797824B20F4258500BC4950 /* FeedViewController.m */,
 				6797824D20F4282F00BC4950 /* PostCell.h */,
@@ -157,6 +179,7 @@
 				6797825120F4323B00BC4950 /* ComposeViewController.m */,
 				671A0B6720F4095300540AA8 /* Assets.xcassets */,
 				671A0B6920F4095300540AA8 /* LaunchScreen.storyboard */,
+				673545DA20F5707600FBF4D3 /* Screen Shot 2018-07-10 at 3.53.01 PM.png */,
 				671A0B6C20F4095300540AA8 /* Info.plist */,
 				673545D620F55DA600FBF4D3 /* Billabong.ttf */,
 				671A0B6D20F4095300540AA8 /* main.m */,
@@ -180,6 +203,20 @@
 				671A0B8420F4095300540AA8 /* Info.plist */,
 			);
 			path = InstagramUITests;
+			sourceTree = "<group>";
+		};
+		673545E120F5C8D500FBF4D3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				673545DF20F5C58300FBF4D3 /* heart-icon.png */,
+				673545E220F5C9BC00FBF4D3 /* comments-icon.png */,
+				673545EC20F5CC5A00FBF4D3 /* more-icon.png */,
+				673545E820F5CB7100FBF4D3 /* kitten.png */,
+				673545F020F5CD8000FBF4D3 /* bookmark-icon.png */,
+				673545EE20F5CD3600FBF4D3 /* paper-airplane-icon.png */,
+				673545D820F56A7200FBF4D3 /* background-instagram.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		A39D84FAFD21C6557CF65321 /* Pods */ = {
@@ -302,10 +339,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				673545F120F5CD8000FBF4D3 /* bookmark-icon.png in Resources */,
+				673545ED20F5CC5B00FBF4D3 /* more-icon.png in Resources */,
+				673545EF20F5CD3700FBF4D3 /* paper-airplane-icon.png in Resources */,
+				673545E920F5CB7100FBF4D3 /* kitten.png in Resources */,
+				673545E320F5C9BC00FBF4D3 /* comments-icon.png in Resources */,
+				673545DB20F5707600FBF4D3 /* Screen Shot 2018-07-10 at 3.53.01 PM.png in Resources */,
 				671A0B6B20F4095300540AA8 /* LaunchScreen.storyboard in Resources */,
 				671A0B6820F4095300540AA8 /* Assets.xcassets in Resources */,
 				671A0B6620F4095200540AA8 /* Main.storyboard in Resources */,
 				673545D720F55DA600FBF4D3 /* Billabong.ttf in Resources */,
+				673545D920F56A7200FBF4D3 /* background-instagram.jpg in Resources */,
+				673545E020F5C58300FBF4D3 /* heart-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,10 +432,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Instagram/Pods-Instagram-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +455,7 @@
 				671A0B6E20F4095300540AA8 /* main.m in Sources */,
 				671A0B6020F4095200540AA8 /* AppDelegate.m in Sources */,
 				6797824C20F4258500BC4950 /* FeedViewController.m in Sources */,
+				673545DE20F5863400FBF4D3 /* DetailViewController.m in Sources */,
 				6797825220F4323B00BC4950 /* ComposeViewController.m in Sources */,
 				6797824920F4207F00BC4950 /* LoginViewController.m in Sources */,
 				6797824F20F4282F00BC4950 /* PostCell.m in Sources */,

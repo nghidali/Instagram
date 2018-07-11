@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property NSString * timestamp;
 
 @end

@@ -81,7 +81,7 @@
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     if(username.length == 0 || password.length == 0){
-        UIAlertController *alert = [self generateAlert:@"Registration Failed" message:@"Information is incomplete"];
+        UIAlertController *alert = [self generateAlert:@"Login Failed" message:@"Information is incomplete"];
         [self presentViewController:alert animated:YES completion:^{
             // optional code for what happens a;fter the alert controller has finished presenting
         }];
@@ -90,6 +90,10 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
+            UIAlertController *alert = [self generateAlert:@"Login failed" message:@"We couldn't find you, try signing up for a new account."];
+            [self presentViewController:alert animated:YES completion:^{
+                // optional code for what happens a;fter the alert controller has finished presenting
+            }];
         } else {
             NSLog(@"User logged in successfully");
             

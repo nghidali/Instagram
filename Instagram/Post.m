@@ -31,6 +31,9 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"E MMM d HH:mm:ss Z y"];
+    newPost.timestamp = [dateFormatter stringFromDate:[NSDate date]];
     
     [newPost saveInBackgroundWithBlock: completion];
 }
