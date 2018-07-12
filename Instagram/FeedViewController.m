@@ -12,6 +12,8 @@
 #import "DetailViewController.h"
 @interface FeedViewController () <UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+
 @property NSArray * posts;
 @end
 
@@ -63,6 +65,7 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.height /2;
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:refreshControl atIndex:0];

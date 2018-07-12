@@ -29,6 +29,7 @@
 		673545F120F5CD8000FBF4D3 /* bookmark-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 673545F020F5CD8000FBF4D3 /* bookmark-icon.png */; };
 		673545F820F6AB3100FBF4D3 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545F720F6AB3100FBF4D3 /* ProfileViewController.m */; };
 		673545FB20F6AFBB00FBF4D3 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545FA20F6AFBB00FBF4D3 /* PostCollectionViewCell.m */; };
+		673545FF20F6CF6C00FBF4D3 /* Zuck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 673545FE20F6CF6B00FBF4D3 /* Zuck.jpg */; };
 		6797824920F4207F00BC4950 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824820F4207F00BC4950 /* LoginViewController.m */; };
 		6797824C20F4258500BC4950 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824B20F4258500BC4950 /* FeedViewController.m */; };
 		6797824F20F4282F00BC4950 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824E20F4282F00BC4950 /* PostCell.m */; };
@@ -91,6 +92,7 @@
 		673545F720F6AB3100FBF4D3 /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		673545F920F6AFBB00FBF4D3 /* PostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
 		673545FA20F6AFBB00FBF4D3 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
+		673545FE20F6CF6B00FBF4D3 /* Zuck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Zuck.jpg; sourceTree = "<group>"; };
 		6797824720F4207F00BC4950 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.h; sourceTree = "<absolute>"; };
 		6797824820F4207F00BC4950 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.m; sourceTree = "<absolute>"; };
 		6797824A20F4258500BC4950 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				673545E220F5C9BC00FBF4D3 /* comments-icon.png */,
 				673545EC20F5CC5A00FBF4D3 /* more-icon.png */,
 				673545E820F5CB7100FBF4D3 /* kitten.png */,
+				673545FE20F6CF6B00FBF4D3 /* Zuck.jpg */,
 				673545F020F5CD8000FBF4D3 /* bookmark-icon.png */,
 				673545EE20F5CD3600FBF4D3 /* paper-airplane-icon.png */,
 				673545D820F56A7200FBF4D3 /* background-instagram.jpg */,
@@ -360,6 +363,7 @@
 				671A0B6620F4095200540AA8 /* Main.storyboard in Resources */,
 				673545D720F55DA600FBF4D3 /* Billabong.ttf in Resources */,
 				673545D920F56A7200FBF4D3 /* background-instagram.jpg in Resources */,
+				673545FF20F6CF6C00FBF4D3 /* Zuck.jpg in Resources */,
 				673545E020F5C58300FBF4D3 /* heart-icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,7 @@
 #import "Parse.h"
 
 @interface ProfileViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSArray * posts;
 @end
@@ -20,16 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.collectionView.dataSource = self;
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.height /2;
     [self makeQuery];
     
     //resize collection view
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
     
-    layout.minimumInteritemSpacing = 5;
-    layout.minimumLineSpacing = 5;
+    layout.minimumInteritemSpacing = 1;
+    layout.minimumLineSpacing = 1;
     
     CGFloat postersPerLine = 3;
-    CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing) *(postersPerLine - 1) / postersPerLine;
+    CGFloat itemWidth = (self.collectionView.frame.size.width - (layout.minimumInteritemSpacing * (postersPerLine - 1))) / postersPerLine;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth,itemHeight);
 }
