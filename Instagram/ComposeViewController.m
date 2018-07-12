@@ -62,7 +62,7 @@
     
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    originalImage = [self resizeImage:originalImage withSize:CGSizeMake(100, 100)];
+    originalImage = [self resizeImage:originalImage withSize:CGSizeMake(500, 500)];
     self.imageUpload = originalImage;
     // Do something with the images (based on your use case)
     NSLog(@"Image taken!");

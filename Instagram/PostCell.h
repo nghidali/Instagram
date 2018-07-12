@@ -13,5 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property NSString * timestamp;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+
 
 @end

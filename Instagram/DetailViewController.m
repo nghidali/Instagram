@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 
 @end
 
@@ -25,7 +26,8 @@
     self.captionLabel.text = self.postCell.postCaption.text;
     self.postImage.image = self.postCell.postImage.image;
     //self.dateLabel.text = self.postCell.timestamp;
-    
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.height / 2;
+    self.profilePic.image = self.postCell.profilePic.image;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     // Configure the input format to parse the date string
     formatter.dateFormat = @"E MMM d HH:mm:ss Z y";
