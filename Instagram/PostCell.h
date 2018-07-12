@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property NSString * timestamp;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
+@property (weak, nonatomic) IBOutlet UIButton *likeIcon;
+@property BOOL favorited;
 
 
 @end

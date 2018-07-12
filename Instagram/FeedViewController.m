@@ -77,6 +77,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    cell.favorited = NO;
     cell.postCaption.text = self.posts[indexPath.row][@"caption"];
     cell.profilePic.layer.cornerRadius = cell.profilePic.frame.size.height / 2;
     PFUser *user = self.posts[indexPath.row][@"author"];

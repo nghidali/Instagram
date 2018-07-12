@@ -16,6 +16,9 @@
 		671A0B6E20F4095300540AA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A0B6D20F4095300540AA8 /* main.m */; };
 		671A0B7820F4095300540AA8 /* InstagramTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A0B7720F4095300540AA8 /* InstagramTests.m */; };
 		671A0B8320F4095300540AA8 /* InstagramUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 671A0B8220F4095300540AA8 /* InstagramUITests.m */; };
+		67203D5F20F7ECA9005B320F /* favor-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 67203D5E20F7ECA9005B320F /* favor-icon.png */; };
+		67203D6B20F7F08E005B320F /* red-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 67203D6A20F7F08E005B320F /* red-heart.png */; };
+		67203D6D20F7F093005B320F /* black-outline-heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 67203D6C20F7F093005B320F /* black-outline-heart.png */; };
 		673545D520F5464800FBF4D3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545D420F5464800FBF4D3 /* Post.m */; };
 		673545D720F55DA600FBF4D3 /* Billabong.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 673545D620F55DA600FBF4D3 /* Billabong.ttf */; };
 		673545D920F56A7200FBF4D3 /* background-instagram.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 673545D820F56A7200FBF4D3 /* background-instagram.jpg */; };
@@ -75,6 +78,9 @@
 		671A0B7E20F4095300540AA8 /* InstagramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		671A0B8220F4095300540AA8 /* InstagramUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramUITests.m; sourceTree = "<group>"; };
 		671A0B8420F4095300540AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67203D5E20F7ECA9005B320F /* favor-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favor-icon.png"; sourceTree = "<group>"; };
+		67203D6A20F7F08E005B320F /* red-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red-heart.png"; sourceTree = "<group>"; };
+		67203D6C20F7F093005B320F /* black-outline-heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-outline-heart.png"; sourceTree = "<group>"; };
 		673545D320F5464800FBF4D3 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		673545D420F5464800FBF4D3 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		673545D620F55DA600FBF4D3 /* Billabong.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Billabong.ttf; sourceTree = "<group>"; };
@@ -220,6 +226,9 @@
 		673545E120F5C8D500FBF4D3 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				67203D5E20F7ECA9005B320F /* favor-icon.png */,
+				67203D6A20F7F08E005B320F /* red-heart.png */,
+				67203D6C20F7F093005B320F /* black-outline-heart.png */,
 				673545DF20F5C58300FBF4D3 /* heart-icon.png */,
 				673545E220F5C9BC00FBF4D3 /* comments-icon.png */,
 				673545EC20F5CC5A00FBF4D3 /* more-icon.png */,
@@ -353,8 +362,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				673545F120F5CD8000FBF4D3 /* bookmark-icon.png in Resources */,
+				67203D5F20F7ECA9005B320F /* favor-icon.png in Resources */,
 				673545ED20F5CC5B00FBF4D3 /* more-icon.png in Resources */,
+				67203D6B20F7F08E005B320F /* red-heart.png in Resources */,
 				673545EF20F5CD3700FBF4D3 /* paper-airplane-icon.png in Resources */,
+				67203D6D20F7F093005B320F /* black-outline-heart.png in Resources */,
 				673545E920F5CB7100FBF4D3 /* kitten.png in Resources */,
 				673545E320F5C9BC00FBF4D3 /* comments-icon.png in Resources */,
 				673545DB20F5707600FBF4D3 /* Screen Shot 2018-07-10 at 3.53.01 PM.png in Resources */,

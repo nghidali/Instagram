@@ -14,11 +14,20 @@
     [super awakeFromNib];
     // Initialization code
 }
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+- (IBAction)didLike:(id)sender {
+    if(!self.favorited){
+        self.favorited = YES;
+        self.likeIcon.selected = YES;
+    }
+    else{
+        self.favorited = NO;
+        self.likeIcon.selected = NO;
+    }
 }
 
 @end
