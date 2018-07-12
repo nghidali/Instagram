@@ -42,17 +42,6 @@
     [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 - (IBAction)onShare:(id)sender {
-    /*PFObject *instagramPost = [PFObject objectWithClassName:@"InstagramPost"];
-    instagramPost[@"caption"] = self.captionField.text;
-    instagramPost[@"user"] = [PFUser currentUser];
-    [instagramPost saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
-        if (succeeded) {
-            NSLog(@"The message was saved!");
-            self.captionField.text = nil;
-        } else {
-            NSLog(@"Problem saving message: %@", error.localizedDescription);
-        }
-    }];*/
     [Post postUserImage:self.imageUpload withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"The post was saved!");

@@ -254,7 +254,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="profilePic" destination="38U-hO-x1h" id="Mqe-BT-ADM"/>
                         <outlet property="tableView" destination="CeH-Fg-uCq" id="VIq-WP-V7d"/>
                     </connections>
                 </viewController>
@@ -377,10 +376,6 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Zuck.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Dd9-Ng-XcO">
-                                <rect key="frame" x="16" y="42" width="90" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mark Zuckerberg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-VH-5F5">
                                 <rect key="frame" x="16" y="138" width="132" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -430,13 +425,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="fill" text="Edit Profile" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PSi-2H-nVQ">
-                                <rect key="frame" x="135" y="100" width="224" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cls-wM-Xc1">
+                                <rect key="frame" x="16" y="39" width="85" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <state key="normal" title="Button" image="Icon-60"/>
+                                <connections>
+                                    <action selector="onProfileClick:" destination="8aO-15-flt" eventType="touchUpInside" id="3AU-Pn-gSx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0W8-Z0-MTm"/>
@@ -444,7 +440,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" selectedImage="profile_tab" id="3vy-An-UzD"/>
                     <connections>
                         <outlet property="collectionView" destination="UEe-li-Pn2" id="1j3-Vj-YZK"/>
-                        <outlet property="profilePic" destination="Dd9-Ng-XcO" id="uWm-7B-qAU"/>
+                        <outlet property="profilePic" destination="Cls-wM-Xc1" id="ebS-mZ-sUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVT-eJ-IBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -599,6 +595,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon-60" width="60" height="60"/>
         <image name="Zuck.jpg" width="416" height="416"/>
         <image name="background-instagram.jpg" width="240" height="240"/>
         <image name="bookmark-icon.png" width="512" height="512"/>
