@@ -29,6 +29,7 @@
     [query includeKey:@"caption"];
     [query includeKey:@"image"];
     [query includeKey:@"createdAt"];
+    [query includeKey:@"_id"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     
@@ -77,40 +78,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
-    cell.favorited = NO;
-    cell.postCaption.text = self.posts[indexPath.row][@"caption"];
-    cell.profilePic.layer.cornerRadius = cell.profilePic.frame.size.height / 2;
-    PFUser *user = self.posts[indexPath.row][@"author"];
-    if (user != nil){
-        PFFile * imageFile = [user objectForKey:@"profilePicture"];
-        if(imageFile != nil){
-            [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
-                if (!imageData) {
-                    return NSLog(@"%@", error);
-                }
-                cell.profilePic.image = [UIImage imageWithData:imageData];
-            }];
-        }
-    }
-    cell.timestamp = self.posts[indexPath.row][@"timestamp"];
-    
-    PFFile * imageFile = self.posts[indexPath.row][@"image"];
-    if(imageFile != nil){
-        [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {
-            if (!imageData) {
-                return NSLog(@"%@", error);
-            }
-            cell.postImage.image = [UIImage imageWithData:imageData];
-        }];
-    }
-    if (user != nil) {
-        // User found! update username label with username
-        cell.usernameLabel.text = user.username;
-    } else {
-        // No user found, set default username
-        cell.usernameLabel.text = @"🤖";
-    }
-    
+    [cell setAttributes:self.posts[indexPath.row]];
     return cell;
     
 }

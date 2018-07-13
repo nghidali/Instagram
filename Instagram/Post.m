@@ -18,6 +18,8 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic usersWhoLiked;
+
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -31,6 +33,7 @@
     newPost.caption = caption;
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
+    newPost.usersWhoLiked = [NSMutableArray new];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"E MMM d HH:mm:ss Z y"];
     newPost.timestamp = [dateFormatter stringFromDate:[NSDate date]];
