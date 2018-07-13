@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *profilePic;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property NSArray * posts;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postCountLabel;
+
 @end
 
 @implementation ProfileViewController
@@ -22,8 +25,8 @@
     [super viewDidLoad];
     self.collectionView.dataSource = self;
     self.profilePic.layer.cornerRadius = self.profilePic.frame.size.height /2;
+    self.user = [PFUser currentUser];
     [self makeQuery];
-    
     //resize collection view
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout*) self.collectionView.collectionViewLayout;
     
@@ -61,7 +64,7 @@
     
     [self.profilePic setImage:originalImage forState:UIControlStateNormal];
     
-    PFUser * user = [PFUser currentUser];
+    PFUser * user = self.user;
     [user setObject:imageFile forKey:@"profilePicture"];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error){
@@ -114,7 +117,7 @@
     [query includeKey:@"image"];
     [query includeKey:@"createdAt"];
     [query orderByDescending:@"createdAt"];
-    [query whereKey:@"author" equalTo:[PFUser currentUser]];
+    [query whereKey:@"author" equalTo:self.user];
     query.limit = 20;
     
     // fetch data asynchronously
@@ -124,9 +127,11 @@
             NSLog(@"posts retrieved!");
             [self.collectionView reloadData];
             // do something with the array of object returned by the call
+            self.postCountLabel.text = [NSString stringWithFormat:@"%lu", self.posts.count];
             if (posts.count != 0){
                 PFUser * user = self.posts[0][@"author"];
                 if (user != nil){
+                    self.usernameLabel.text = user.username;
                     PFFile * imageFile = [user objectForKey:@"profilePicture"];
                     if(imageFile != nil){
                         [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable imageData, NSError * _Nullable error) {

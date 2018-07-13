@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Parse.h"
 @interface ProfileViewController : UIViewController
-
+@property PFUser * user;
 @end
