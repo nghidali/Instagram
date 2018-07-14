@@ -1,8 +1,8 @@
-# Project 4 - *Name of App Here*
+# Project 4 - *Instagram*
 
-**Name of your app** is a photo sharing app using Parse as its backend.
+**Instagram** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
@@ -35,18 +35,19 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [X] I used autolayout on every view controller
+- [X] Imported a custom Instagram font
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I want to compare my UI with others.
+2. I want to understand more about blocks.
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a link to my gif:
 
-<img src='https://i.imgur.com/tiq5s5m.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+https://i.imgur.com/tiq5s5m.gif
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -60,10 +61,12 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 ## Notes
 
 Describe any challenges encountered while building the app.
+- This was so much fun!!!!!!!!!!
+- I used autolayout on every view controller
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2018] [Natalie Ghidali]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
