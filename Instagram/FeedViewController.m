@@ -11,13 +11,40 @@
 #import "PostCell.h"
 #import "DetailViewController.h"
 #import "OtherProfileViewController.h"
+#import "InfiniteScrollActivityView.h"
 
-@interface FeedViewController () <UITableViewDataSource,UITableViewDelegate, PostCellDelegate>
+@interface FeedViewController () <UITableViewDataSource,UITableViewDelegate, PostCellDelegate, UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray * posts;
+@property int queryLimit;
+
 @end
 
 @implementation FeedViewController
+
+bool isMoreDataLoading = false;
+InfiniteScrollActivityView* loadingMoreView;
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if(!isMoreDataLoading){
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.tableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.tableView.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.tableView.isDragging) {
+            isMoreDataLoading = true;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
+            _queryLimit += 20;
+            [self makeQuery];
+        }
+    }
+}
 
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
     [self makeQuery];
@@ -38,8 +65,13 @@
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
+            isMoreDataLoading = false;
             self.posts = posts;
             NSLog(@"posts retrieved!");
+            
+            // Stop the loading indicator
+            [loadingMoreView stopAnimating];
+            
             [self.tableView reloadData];
             // do something with the array of object returned by the call
         } else {
@@ -60,11 +92,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSLog(@"View did appear");
+    _queryLimit = 20;
     [self makeQuery];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _queryLimit = 20;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -72,6 +106,17 @@
     [self.tableView insertSubview:refreshControl atIndex:0];
     [self makeQuery];
     // Do any additional setup after loading the view.
+    
+    // Set up Infinite Scroll loading indicator
+    CGRect frame = CGRectMake(0, self.tableView.contentSize.height, self.tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.tableView addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.tableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.tableView.contentInset = insets;
+    
 }
 
 - (void)didReceiveMemoryWarning {

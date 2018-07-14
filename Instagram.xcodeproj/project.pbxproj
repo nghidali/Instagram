@@ -34,6 +34,7 @@
 		673545FB20F6AFBB00FBF4D3 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 673545FA20F6AFBB00FBF4D3 /* PostCollectionViewCell.m */; };
 		673545FF20F6CF6C00FBF4D3 /* Zuck.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 673545FE20F6CF6B00FBF4D3 /* Zuck.jpg */; };
 		678AC07420F95BAB000CD978 /* OtherProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 678AC07320F95BAB000CD978 /* OtherProfileViewController.m */; };
+		678AC07720F97C69000CD978 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 678AC07620F97C69000CD978 /* InfiniteScrollActivityView.m */; };
 		6797824920F4207F00BC4950 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824820F4207F00BC4950 /* LoginViewController.m */; };
 		6797824C20F4258500BC4950 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824B20F4258500BC4950 /* FeedViewController.m */; };
 		6797824F20F4282F00BC4950 /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6797824E20F4282F00BC4950 /* PostCell.m */; };
@@ -102,6 +103,8 @@
 		673545FE20F6CF6B00FBF4D3 /* Zuck.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Zuck.jpg; sourceTree = "<group>"; };
 		678AC07220F95BAB000CD978 /* OtherProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OtherProfileViewController.h; sourceTree = "<group>"; };
 		678AC07320F95BAB000CD978 /* OtherProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OtherProfileViewController.m; sourceTree = "<group>"; };
+		678AC07520F97C69000CD978 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		678AC07620F97C69000CD978 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		6797824720F4207F00BC4950 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.h; sourceTree = "<absolute>"; };
 		6797824820F4207F00BC4950 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = /Users/nghidali/Desktop/Instagram/Instagram/LoginViewController.m; sourceTree = "<absolute>"; };
 		6797824A20F4258500BC4950 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 			children = (
 				673545E120F5C8D500FBF4D3 /* images */,
 				671A0B6420F4095200540AA8 /* Main.storyboard */,
+				678AC07520F97C69000CD978 /* InfiniteScrollActivityView.h */,
+				678AC07620F97C69000CD978 /* InfiniteScrollActivityView.m */,
 				678AC07220F95BAB000CD978 /* OtherProfileViewController.h */,
 				678AC07320F95BAB000CD978 /* OtherProfileViewController.m */,
 				673545F920F6AFBB00FBF4D3 /* PostCollectionViewCell.h */,
@@ -487,6 +492,7 @@
 				673545F820F6AB3100FBF4D3 /* ProfileViewController.m in Sources */,
 				673545FB20F6AFBB00FBF4D3 /* PostCollectionViewCell.m in Sources */,
 				671A0B6020F4095200540AA8 /* AppDelegate.m in Sources */,
+				678AC07720F97C69000CD978 /* InfiniteScrollActivityView.m in Sources */,
 				6797824C20F4258500BC4950 /* FeedViewController.m in Sources */,
 				673545DE20F5863400FBF4D3 /* DetailViewController.m in Sources */,
 				6797825220F4323B00BC4950 /* ComposeViewController.m in Sources */,
