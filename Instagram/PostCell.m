@@ -13,7 +13,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    UITapGestureRecognizer *postTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickedPost:)];
     // Initialization code
+    [self.postImage addGestureRecognizer:postTapGestureRecognizer];
+    [self.postImage setUserInteractionEnabled:YES];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
@@ -24,7 +27,7 @@
     self.favorited = NO;
     self.postCaption.text = post[@"caption"];
     self.post = post;
-    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.height / 2;
+    self.profilePic.imageView.layer.cornerRadius = self.profilePic.imageView.frame.size.height / 2;
     PFUser *user = post[@"author"];
     if (user != nil){
         PFFile * imageFile = [user objectForKey:@"profilePicture"];
@@ -33,7 +36,7 @@
                 if (!imageData) {
                     return NSLog(@"%@", error);
                 }
-                self.profilePic.image = [UIImage imageWithData:imageData];
+                [self.profilePic setImage:[UIImage imageWithData:imageData] forState:UIControlStateNormal];
             }];
         }
     }
@@ -133,6 +136,13 @@
     long numLikes = self.post.usersWhoLiked.count;
     NSString *numLikesString = [NSString stringWithFormat:@"%lu",numLikes];
     self.likedByLabel.text = [numLikesString stringByAppendingString:@" Likes"];
+}
+- (void) clickedPost:(UITapGestureRecognizer *)sender{
+    [self.delegate didTapPost:self];
+}
+
+- (IBAction)clickedProfile:(id)sender {
+    [self.delegate didTapProfile:self];
 }
 
 @end

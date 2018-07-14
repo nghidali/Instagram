@@ -10,7 +10,9 @@
 #import "Parse.h"
 #import "PostCell.h"
 #import "DetailViewController.h"
-@interface FeedViewController () <UITableViewDataSource,UITableViewDelegate>
+#import "OtherProfileViewController.h"
+
+@interface FeedViewController () <UITableViewDataSource,UITableViewDelegate, PostCellDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSArray * posts;
 @end
@@ -54,6 +56,7 @@
         // PFUser.current() will now be nil
     }];
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     NSLog(@"View did appear");
@@ -79,6 +82,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell * cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     [cell setAttributes:self.posts[indexPath.row]];
+    cell.delegate = self;
     return cell;
     
 }
@@ -92,11 +96,24 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"DetailSegue"]){
-        PostCell * postCell = (PostCell *) sender;
+        PostCell * postCell =  sender;
         DetailViewController * detailViewController = [segue destinationViewController];
         detailViewController.postCell = postCell;
     }
+    else if([segue.identifier isEqualToString:@"ProfileSegue"]){
+        PostCell * postCell =  sender;
+        PFUser *postUser = postCell.post[@"author"];
+        OtherProfileViewController * other = [segue destinationViewController];
+        other.user = postUser;
+    }
 }
 
+- (void)didTapPost:(PostCell *)postCell {
+    [self performSegueWithIdentifier:@"DetailSegue" sender:postCell];
+}
+
+- (void)didTapProfile:(PostCell *)postCell {
+    [self performSegueWithIdentifier:@"ProfileSegue" sender:postCell];
+}
 
 @end

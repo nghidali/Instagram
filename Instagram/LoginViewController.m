@@ -58,6 +58,7 @@
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
     if(newUser.username.length == 0 || newUser.password.length == 0){
+        NSLog(@"Registration failed information is incomplete");
         UIAlertController *alert = [self generateAlert:@"Registration Failed" message:@"Information is incomplete"];
         [self presentViewController:alert animated:YES completion:^{
             // optional code for what happens a;fter the alert controller has finished presenting
@@ -67,7 +68,7 @@
     // call sign up function on the object
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
-            NSLog(@"Error: %@", error.localizedDescription);
+            NSLog(@"ERROR: %@", error.localizedDescription);
         } else {
             NSLog(@"User registered successfully");
             

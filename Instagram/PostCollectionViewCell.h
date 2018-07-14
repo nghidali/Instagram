@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Parse.h"
 
 @interface PostCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-
 @end
